@@ -4,6 +4,23 @@
 
 [![Test](https://github.com/rubenv/sql-migrate/actions/workflows/test.yml/badge.svg)](https://github.com/rubenv/sql-migrate/actions/workflows/test.yml) [![Go Reference](https://pkg.go.dev/badge/github.com/rubenv/sql-migrate.svg)](https://pkg.go.dev/github.com/rubenv/sql-migrate)
 
+# **WORKAROUND EDITION**
+- This repository is a workaround implementation for sql-migrate to interact with AWS RDS TLS certificates pem tls connection. Not an official supported.
+- Configuration example:
+
+```yml
+production:
+  dialect: mysql
+  datasource: root@/dbname?parseTime=true&charset=utf8mb4&tls=custom
+  dir: migrations/mysql
+  table: migrations
+```
+
+- Set tls cert path with Environment Variable
+```
+export MYSQL_CA_CERT_FILE=<ca_cert_path>
+```
+
 ## Features
 
 - Usable as a CLI tool or as a library
